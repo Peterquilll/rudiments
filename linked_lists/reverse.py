@@ -30,7 +30,12 @@ def reverse(head):
     Reverse a linked list iteratively
     """
     # add code here
-    return head
+    # you'll need 3 node variables for previous node, current node, and next_node
+    # iterate through your list
+    #   - then we can do the reversal
+    # the final node set to prev is the new head
+    # return your new head
+    pass
 
 
 if __name__ == '__main__':
