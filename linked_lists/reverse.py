@@ -35,8 +35,16 @@ def reverse(head):
     #   - then we can do the reversal
     # the final node set to prev is the new head
     # return your new head
-    pass
-
+    prev = None
+    current = head
+    while current:
+        next = current.next
+        current.next = prev
+        prev = current
+        current = next
+    head = prev
+    return head
+    # the three variables was messing me up a bit
 
 if __name__ == '__main__':
     head = Node(1)
