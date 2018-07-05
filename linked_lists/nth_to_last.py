@@ -1,19 +1,4 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-
-class LinkedList:
-    def __init__(self):
-        self.head = None
-
-    def print_list(self):
-        temp = self.head
-        while temp:
-            print(temp.data)
-            temp = temp.next
-
+from utils import Node, print_list
 
 def nth_to_last(head, k):
     p1 = head
@@ -28,17 +13,18 @@ def nth_to_last(head, k):
     return p2
 
 if __name__ == '__main__':
-    k = int(input("Number: "))
-    llist = LinkedList()
-    llist.head = Node(1)
+    k = 2
+    head = Node(1)
     second = Node(2)
     third = Node(3)
     forth = Node(4)
 
-    llist.head.next = second
+    head.next = second
     second.next = third
     third.next = forth
-    llist.print_list()
+    print_list(head)
 
-    result = nth_to_last(llist.head, k)
+    print('\n\n')
+
+    result = nth_to_last(head, k)
     print(result.data)
