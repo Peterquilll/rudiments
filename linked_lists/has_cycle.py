@@ -1,45 +1,34 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-
-class LinkedList:
-    def __init__(self):
-        self.head = None
-
-    def print_list(self):
-        temp = self.head
-        while temp:
-            print(temp.data)
-            temp = temp.next
-
+from utils import Node, print_list
 
 def has_cycle(head):
-    pawn = head
-    scout = head
+    current = head
+    fast = head
 
-    while scout is not None and scout.next is not None:
-        pawn = pawn.next
-        scout = scout.next.next
-        if pawn == scout:
+    while current.next and \
+          fast and \
+          fast.next and \
+          fast.next.next:
+        current = current.next
+        fast = fast.next.next
+        if current == fast:
             return True
-
+        
     return False
 
-
 if __name__ == '__main__':
-    llist = LinkedList()
-    llist.head = Node(1)
+    head = Node(1)
     second = Node(2)
     third = Node(3)
-    forth = Node(4)
+    fourth = Node(4)
+    fifth = Node(5)
 
-    llist.head.next = second
+    head.next = second
     second.next = third
-    third.next = forth
-    # forth.next = second
-     # llist.print_list()
+    third.next = fourth
+    fourth.next = fifth
+    fifth.next = third
 
-    result = has_cycle(llist.head)
+    print('\n\n')
+
+    result = has_cycle(head)
     print(result)

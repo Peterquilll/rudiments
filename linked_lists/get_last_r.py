@@ -1,13 +1,12 @@
 from utils import Node, print_list
 
-def get_last(head):
-    current = head
-    if current is None:
+def get_last_r(head):
+    if head is None:
         return None
-    while current.next is not None:
-        current = current.next
-        
-    return current
+    if head.next is None:
+        return head
+    return get_last_r(head.next)
+    
 
 if __name__ == '__main__':
     head = Node(1)
@@ -23,6 +22,7 @@ if __name__ == '__main__':
     print_list(head)
 
     print('\n\n')
+    
 
-    result = get_last(None)
+    result = get_last_r(head)
     print(result)
