@@ -2,7 +2,14 @@ from utils import Node, list_str
 
 
 def k_from_the_end(head, k):
-    return head
+    current = head
+    trail = head
+    for i in range(k):
+        current = current.next
+    while current is not None:
+        trail = trail.next
+        current = current.next
+    return trail
 
 
 def main():
@@ -16,7 +23,7 @@ def main():
     k = 3
     kth_node = k_from_the_end(head, k)
 
-    print('kth_fro_the_end:', kth_node)
+    print('kth_from_the_end:', kth_node)
 
 if __name__ == "__main__":
     main()
