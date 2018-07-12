@@ -5,6 +5,8 @@ def k_from_the_end(head, k):
     current = head
     trail = head
     for i in range(k):
+        if current is None:
+            return None
         current = current.next
     while current is not None:
         trail = trail.next
@@ -20,7 +22,7 @@ def main():
     head = nodes[0]
     print(list_str(head))
 
-    k = 3
+    k = 4
     kth_node = k_from_the_end(head, k)
 
     print('kth_from_the_end:', kth_node)
