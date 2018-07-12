@@ -5,7 +5,7 @@ class Node:
         self.random = None
 
     def __str__(self):
-        return str (self.data)
+        return str(self.data)
 
 
 def print_list(head):
@@ -13,6 +13,7 @@ def print_list(head):
     while current:
         print(current.data)
         current = current.next
+
 
 def list_str(head):
     if not head:
