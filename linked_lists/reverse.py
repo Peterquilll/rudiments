@@ -3,15 +3,13 @@ from utils import Node, list_str
 
 def reverse(head):
     current = head
-    helper = head
+    next_node = head
 
-    helper = helper.next
-    helper.next = current
+    next_node = next_node.next
+    next_node.next = current
     current.next = None
-    head = helper
-    
-    return head
 
+    return next_node
 
 
 def main():
