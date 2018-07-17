@@ -3,17 +3,17 @@ from utils import Node, list_str
 
 def reverse(head):
     current = head
-    next_node = head
-
-    next_node = next_node.next
-    next_node.next = current
-    current.next = None
-
-    return next_node
+    prev = None
+    while current is not None:
+        next  = current.next
+        current.next = prev
+        prev = current
+        current = next
+    return prev
 
 
 def main():
-    data = [1, 2]#, 3, 4, 5, 6, 7, 8]
+    data = [1, 2, 3, 4, 5, 6, 7, 8]
     nodes = list(map(Node, data))
     for i in range(len(nodes) - 1):
         nodes[i].next = nodes[i+1]
