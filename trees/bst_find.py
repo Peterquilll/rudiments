@@ -11,15 +11,15 @@ def has_element(root, k):
 
     if k <= root.value:
         return has_element(root.left, k)
-    if k > root.value:
-        return has_element(root.right, k)
 
-    return False
+    return has_element(root.right, k)
+
 
 
 def main():
     bst_root = bst(height=2)
     k = 6
+    print('k: ', k)
     print('bst: ', bst_root)
 
     result = has_element(bst_root, k)
