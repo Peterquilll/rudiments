@@ -8,6 +8,7 @@ def find_with_path(root, k, path):
         return path
     if root.left is None and root.right is None:
         return False
+    
     path.append(root.value)
     
     if k <= root.value:
