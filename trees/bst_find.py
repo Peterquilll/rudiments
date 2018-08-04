@@ -2,17 +2,7 @@ from binarytree import build, bst
 
 
 def has_element(root, k):
-    if root is None:
-        return False
-    if root.value == k:
-        return True
-    if root.left is None and root.right is None:
-        return False
-
-    if k <= root.value:
-        return has_element(root.left, k)
-
-    return has_element(root.right, k)
+    return False
 
 
 
