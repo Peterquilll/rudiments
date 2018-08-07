@@ -2,19 +2,7 @@ from binarytree import build, bst
 
 
 def find_with_path(root, k, path):
-    if root is None:
-        return False
-    if root.value == k:
-        return path
-    if root.left is None and root.right is None:
-        return False
-    
-    path.append(root.value)
-    
-    if k <= root.value:
-        return find_with_path(root.left, k, path)
-
-    return find_with_path(root.right, k, path)
+    return []
 
 
 
